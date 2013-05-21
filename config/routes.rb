@@ -1,25 +1,25 @@
 Patienthub::Application.routes.draw do
 
-  # Routes for the Theater resource:
+  # Routes for the Condition resource:
 
   get '/conditions/new', controller: 'conditions', action: 'new'
   post "/conditions", controller: 'conditions', action: 'create'
   get '/conditions', controller: 'conditions', action: 'index'
-  get '/conditions/:id', controller: 'conditions', action: 'show'
-  get '/conditions/:id/edit', controller: 'conditions', action: 'edit'
-  put '/conditions/:id', controller: 'conditions', action: 'update'
-  delete '/conditions/:id', controller: 'conditions', action: 'destroy'
+  get '/conditions/:condition_id', controller: 'conditions', action: 'show'
+  get '/conditions/:condition_id/edit', controller: 'conditions', action: 'edit'
+  put '/conditions/:condition_id', controller: 'conditions', action: 'update'
+  delete '/conditions/:condition_id', controller: 'conditions', action: 'destroy'
   #------------------------------
 
-# Routes for the Movie resource:
+# Routes for the User resource:
 
  get '/users/new', controller: 'users', action: 'new'
  post "/users", controller: 'users', action: 'create'
  get "/users", controller: 'users', action: 'index'
- get '/users/:id', controller: 'users', action: 'show'
- get "/users/:id/edit", controller: 'users', action: 'edit'
- put '/users/:id', controller: 'users', action: 'update'
- delete '/users/:id', controller: 'users', action: 'destroy'
+ get '/users/:user_id', controller: 'users', action: 'show'
+ get "/users/:user_id/edit", controller: 'users', action: 'edit'
+ put '/users/:user_id', controller: 'users', action: 'update'
+ delete '/users/:user_id', controller: 'users', action: 'destroy'
 
 end
 
