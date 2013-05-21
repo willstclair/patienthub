@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patienthub</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <header>
+    <h1>Patient-Hub</h1>
+    <nav>
+      <th><%= link_to "Condition directory", '/conditions' %></th> |
+      <th><%= link_to "User directory", '/users' %></th>
+    </nav>
+  </header>
+
+
+  <%= yield %>
+
+</body>
+</html>

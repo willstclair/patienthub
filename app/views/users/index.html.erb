@@ -1,0 +1,19 @@
+<h1>Experts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>Experts</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.name, "/users/#{user.id}" %></td>
+      <td>      </td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
