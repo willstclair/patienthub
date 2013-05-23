@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  condition_id: 1
+  condition_name: MyString
+  category_id: 1
+
+two:
+  condition_id: 1
+  condition_name: MyString
+  category_id: 1

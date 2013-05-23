@@ -11,34 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503194223) do
+ActiveRecord::Schema.define(:version => 20130523174543) do
 
-  create_table :conditions do |t|
-    t.string :condition_name
-    t.integer :condition_id
-    t.integer :category_id
-    t.datetime :created_at, :null => false
-    t.datetime :updated_at, :null => false
+  create_table "categories", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "category_name"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
-  create_table :categories do |t|
-    t.string :category_name
-    t.integer :category_id
+  create_table "conditions", :force => true do |t|
+    t.integer  "condition_id"
+    t.string   "condition_name"
+    t.integer  "category_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
-  create_table :users do |t|
-    t.integer  :user_id
-    t.string  :user_name
-    t.string :first_name
-    t.string :last_name
-    t.string :user_type
-    t.integer :zip_code
-    t.integer :condition_id
-    t.text :treatments_advised
-    t.text :comments
-    t.datetime :created_at, :null => false
-    t.datetime :updated_at, :null => false
+  create_table "users", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "user_name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "user_type"
+    t.integer  "zip_code"
+    t.integer  "condition_id"
+    t.string   "treatments_advised"
+    t.string   "comments"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
-
 
 end

@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# Condition.destroy_all
+Condition.destroy_all
 
 condition_data = [
 { condition_id: 1, condition_name: 'Breast', category_id: 1},
@@ -106,7 +106,8 @@ condition_data = [
 { condition_id: 95, condition_name: 'Endometriosis', category_id: 18},
 { condition_id: 96, condition_name: 'Menopause', category_id: 18},
 { condition_id: 97, condition_name: 'PCOS', category_id: 18},
-{ condition_id: 98, condition_name: 'Postpartum Depression', category_id: 18}]
+{ condition_id: 98, condition_name: 'Postpartum Depression', category_id: 18},
+]
 
 condition_data.each do |condition_info|
   m = Condition.new
@@ -116,9 +117,9 @@ condition_data.each do |condition_info|
   m.save
 end
 
-puts "There are now #{Condition.count} movies in the database"
+puts "There are now #{Condition.count} conditions in the database"
 
-# Category.destroy_all
+Category.destroy_all
 
 category_data = [
 { category_id: 1, category_name: 'Cancer'},
@@ -143,18 +144,18 @@ category_data = [
 
 category_data.each do |category_info|
   m = Category.new
-  m.category_name = condition_info[:category_name]
-  m.category_id = condition_info[:category_id]
+  m.category_name = category_info[:category_name]
+  m.category_id = category_info[:category_id]
   m.save
 end
 
-puts "There are now #{Category.count} movies in the database"
+puts "There are now #{Category.count} categories in the database"
 
-# User.destroy_all
+User.destroy_all
 
 user_data = [
-{ user_id: 1, user_name: 'willstclair', first_name: 'Will', last_name: 'StClair', user_type: 'Expert', zip_code: 60201, disease_id: 14, treatments_advised: 'Diet restriction', comments: 'Successfully managing my condition and thriving!'},
-{ user_id: 2, user_name: 'kristycharbonneau', first_name: 'Kristy', last_name: 'Charbonneau', user_type: 'Expert', zip_code: 60201, disease_id: 48, treatments_advised: 'Viagra', comments: 'My wife is now feeling a little poke coming through.'},
+{ user_id: 1, user_name: 'willstclair', first_name: 'Will', last_name: 'StClair', user_type: 'Expert', zip_code: 60201, condition_id: 14, treatments_advised: 'Diet restriction', comments: 'Successfully managing my condition and thriving!'},
+{ user_id: 2, user_name: 'kristycharbonneau', first_name: 'Kristy', last_name: 'Charbonneau', user_type: 'Expert', zip_code: 60201, condition_id: 48, treatments_advised: 'Viagra', comments: 'My wife is now feeling a little poke coming through.'},
 ]
 
 user_data.each do |user_info|
@@ -165,9 +166,10 @@ user_data.each do |user_info|
   t.last_name = user_info[:user_name]
   t.user_type = user_info[:user_name]
   t.zip_code = user_info[:user_name]
-  t.disease_id = user_info[:user_name]
+  t.condition_id = user_info[:user_name]
   t.treatments_advised = user_info[:treatments_advised]
   t.comments = user_info[:comments]
   t.save
+
 end
 puts "There are now #{User.count} users in the database"

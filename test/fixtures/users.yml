@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  user_name: MyString
+  first_name: MyString
+  last_name: MyString
+  user_type: MyString
+  zip_code: 1
+  condition_id: 1
+  treatments_advised: MyString
+  comments: MyString
+
+two:
+  user_id: 1
+  user_name: MyString
+  first_name: MyString
+  last_name: MyString
+  user_type: MyString
+  zip_code: 1
+  condition_id: 1
+  treatments_advised: MyString
+  comments: MyString

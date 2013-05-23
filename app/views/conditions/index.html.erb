@@ -11,7 +11,7 @@
   <tbody>
   <% @conditions.each do |condition| %>
     <tr>
-      <td><%= link_to condition_name.title, "/conditions/#{condition.id}" %></td>
+      <td><%= link_to condition.condition_name, "/conditions/#{condition.id}" %></td>
       <td>      </td>
 
     </tr>
