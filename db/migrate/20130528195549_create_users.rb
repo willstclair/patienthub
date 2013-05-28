@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :condition_id
       t.string :treatments_advised
       t.string :comments
+
       t.timestamps
     end
   end

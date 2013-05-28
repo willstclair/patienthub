@@ -32,6 +32,7 @@ class ConditionsController < ActionController::Base
 
   def show
     @condition = Condition.find_by_id(params["condition_id"])
+    @user_count = @condition.users.count(:user_id)
   end
 
   def new

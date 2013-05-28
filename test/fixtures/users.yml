@@ -3,6 +3,7 @@
 one:
   user_id: 1
   user_name: MyString
+  password_digest: MyString
   first_name: MyString
   last_name: MyString
   user_type: MyString
@@ -14,6 +15,7 @@ one:
 two:
   user_id: 1
   user_name: MyString
+  password_digest: MyString
   first_name: MyString
   last_name: MyString
   user_type: MyString

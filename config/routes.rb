@@ -1,23 +1,29 @@
 Patienthub::Application.routes.draw do
 
+  get '/', controller: 'conditions', action: 'index'
+  get '/login', controller: 'sessions', action: 'new'
+  post '/sessions', controller: 'sessions', action: 'create'
+  get "/logout", controller: 'sessions', action: 'destroy'
+  post "/search", controller: 'conditions', action: 'filter'
+
   # Routes for the Condition resource:
 
-  get '/conditions/new', controller: 'conditions', action: 'new'
+  get '/conditions/new', controller: 'conditions', action: 'new', as: "new_condition"
   post "/conditions", controller: 'conditions', action: 'create'
-  get '/conditions', controller: 'conditions', action: 'index'
-  get '/conditions/:condition_id', controller: 'conditions', action: 'show'
-  get '/conditions/:condition_id/edit', controller: 'conditions', action: 'edit'
+  get '/conditions', controller: 'conditions', action: 'index', as: "conditions"
+  get '/conditions/:condition_id', controller: 'conditions', action: 'show', as: "condition"
+  get '/conditions/:condition_id/edit', controller: 'conditions', action: 'edit', as: "edit_condition"
   put '/conditions/:condition_id', controller: 'conditions', action: 'update'
   delete '/conditions/:condition_id', controller: 'conditions', action: 'destroy'
   #------------------------------
 
 # Routes for the User resource:
 
- get '/users/new', controller: 'users', action: 'new'
+ get '/users/new', controller: 'users', action: 'new', as: "new_user"
  post "/users", controller: 'users', action: 'create'
- get "/users", controller: 'users', action: 'index'
- get '/users/:user_id', controller: 'users', action: 'show'
- get "/users/:user_id/edit", controller: 'users', action: 'edit'
+ get "/users", controller: 'users', action: 'index', as: "users"
+ get '/users/:user_id', controller: 'users', action: 'show', as: "user"
+ get "/users/:user_id/edit", controller: 'users', action: 'edit', as: "edit_user"
  put '/users/:user_id', controller: 'users', action: 'update'
  delete '/users/:user_id', controller: 'users', action: 'destroy'
 

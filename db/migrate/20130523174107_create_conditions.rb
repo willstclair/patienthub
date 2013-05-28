@@ -4,7 +4,6 @@ class CreateConditions < ActiveRecord::Migration
       t.integer :condition_id
       t.string :condition_name
       t.integer :category_id
-
       t.timestamps
     end
   end

@@ -106,13 +106,13 @@ condition_data = [
 { condition_id: 95, condition_name: 'Endometriosis', category_id: 18},
 { condition_id: 96, condition_name: 'Menopause', category_id: 18},
 { condition_id: 97, condition_name: 'PCOS', category_id: 18},
-{ condition_id: 98, condition_name: 'Postpartum Depression', category_id: 18},
+{ condition_id: 98, condition_name: 'Postpartum Depression', category_id: 18}
 ]
 
 condition_data.each do |condition_info|
   m = Condition.new
-  m.condition_name = condition_info[:condition_name]
   m.condition_id = condition_info[:condition_id]
+  m.condition_name = condition_info[:condition_name]
   m.category_id = condition_info[:category_id]
   m.save
 end
@@ -144,8 +144,8 @@ category_data = [
 
 category_data.each do |category_info|
   m = Category.new
-  m.category_name = category_info[:category_name]
   m.category_id = category_info[:category_id]
+  m.category_name = category_info[:category_name]
   m.save
 end
 
@@ -155,18 +155,19 @@ User.destroy_all
 
 user_data = [
 { user_id: 1, user_name: 'willstclair', first_name: 'Will', last_name: 'StClair', user_type: 'Expert', zip_code: 60201, condition_id: 14, treatments_advised: 'Diet restriction', comments: 'Successfully managing my condition and thriving!'},
-{ user_id: 2, user_name: 'kristycharbonneau', first_name: 'Kristy', last_name: 'Charbonneau', user_type: 'Expert', zip_code: 60201, condition_id: 48, treatments_advised: 'Viagra', comments: 'My wife is now feeling a little poke coming through.'},
+{ user_id: 2, user_name: 'kristycharbonneau', first_name: 'Kristy', last_name: 'Charbonneau', user_type: 'Expert', zip_code: 60201, condition_id: 48, treatments_advised: 'Viagra', comments: 'My wife is now feeling a little poke coming through.'}
 ]
 
 user_data.each do |user_info|
   t = User.new
   t.user_id = user_info[:user_id]
+  t.password_digest = user_info[:password_digest]
   t.user_name = user_info[:user_name]
-  t.first_name = user_info[:user_name]
-  t.last_name = user_info[:user_name]
-  t.user_type = user_info[:user_name]
-  t.zip_code = user_info[:user_name]
-  t.condition_id = user_info[:user_name]
+  t.first_name = user_info[:first_name]
+  t.last_name = user_info[:last_name]
+  t.user_type = user_info[:user_type]
+  t.zip_code = user_info[:zip_code]
+  t.condition_id = user_info[:condition_id]
   t.treatments_advised = user_info[:treatments_advised]
   t.comments = user_info[:comments]
   t.save

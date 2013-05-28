@@ -1,18 +1,19 @@
 class UsersController < ActionController::Base
 
  def destroy
-    m = User.find_by_id(params["user_id"])
-    m.destroy
+    @user = User.find_by_id(params[:user_id])
+    @user.destroy
     redirect_to "/users"
   end
 
   def edit
-    @user = User.find_by_id(params["user_id"])
+    @user = User.find_by_id(params[:user_id])
   end
 
   def update
-    @user = User.find_by_id(params["user_id"])
+    @user = User.find_by_id(params[:user_id])
     @user.user_name = params[:user_name]
+    @user.password = params[:password]
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
     @user.user_type = params[:user_type]
@@ -27,6 +28,7 @@ class UsersController < ActionController::Base
   def create
     @user = User.new
     @user.user_name = params[:user_name]
+    @user.password = params[:password]
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
     @user.user_type = params[:user_type]

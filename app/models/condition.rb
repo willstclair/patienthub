@@ -3,7 +3,7 @@ class Condition < ActiveRecord::Base
 
 # These were added manually by the two of us. Line two was auto-generated when we ran a command line to create a model.
 
-  belongs_to :category
-  belongs_to :user
+  belongs_to :category, foreign_key: 'category_id'
+  has_many :users, foreign_key: 'condition_id'
 
 end

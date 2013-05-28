@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Patienthub</title>
+  <title>PatientHub</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,13 +9,26 @@
 <body>
 
   <header>
-    <h1>Patient-Hub</h1>
+    <h1>PatientHub</h1>
     <nav>
-      <th><%= link_to "Condition directory", '/conditions' %></th> |
-      <th><%= link_to "User directory", '/users' %></th>
+      <%= link_to "Conditions", '/conditions' %> |
+      <%= link_to "Users", '/users' %> |
+      <% if session["user_id"].present? %>
+        Hello, <%= User.find_by_id(session["user_id"]).name %>!
+        <%= link_to "Sign Out", "/logout" %>
+      <% else %>
+        <%= link_to "Sign Up", '/users/new' %> |
+        <%= link_to "Login", '/login' %> |
+      <% end %>
+
     </nav>
+      <%= form_tag '/search' do %>
+        <%= text_field_tag :term, "", placeholder: 'Search...' %>
+      <% end %>
+
   </header>
 
+  <div class="notice"><%= notice %></div>
 
   <%= yield %>
 
