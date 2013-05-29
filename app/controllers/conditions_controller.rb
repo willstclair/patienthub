@@ -10,6 +10,12 @@ class ConditionsController < ActionController::Base
     @condition = Condition.find_by_id(params["condition_id"])
   end
 
+  def filter
+    search_term = params["term"]
+    @conditions = Condition.where("condition_name LIKE ? OR condition_id = ?", "%#{search_term}%", search_term)
+    render 'index'
+  end
+
   def update
     @condition = Condition.find_by_id(params["condition_id"])
     @condition.condition_name = params[:condition_name]

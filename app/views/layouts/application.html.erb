@@ -20,12 +20,10 @@
         <%= link_to "Sign Up", '/users/new' %> |
         <%= link_to "Login", '/login' %> |
       <% end %>
-
-    </nav>
       <%= form_tag '/search' do %>
         <%= text_field_tag :term, "", placeholder: 'Search...' %>
       <% end %>
-
+    </nav>
   </header>
 
   <div class="notice"><%= notice %></div>
