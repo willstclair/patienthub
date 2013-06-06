@@ -27,6 +27,16 @@ Patienthub::Application.routes.draw do
  put '/users/:user_id', controller: 'users', action: 'update'
  delete '/users/:user_id', controller: 'users', action: 'destroy'
 
+ # Routes for the Treatment resource:
+
+ get '/treatments/new', controller: 'treatments', action: 'new', as: "new_treatment"
+ post "/treatments", controller: 'treatments', action: 'create'
+ get "/treatments", controller: 'treatments', action: 'index', as: "treatments"
+ get '/treatments/:treatment_id', controller: 'treatments', action: 'show', as: "treatment"
+ get "/treatments/:treatment_id/edit", controller: 'treatments', action: 'edit', as: "edit_treatment"
+ put '/treatments/:treatment_id', controller: 'treatments', action: 'update'
+ delete '/treatments/:treatment_id', controller: 'treatments', action: 'destroy'
+
 end
 
   # The priority is based upon order of creation:

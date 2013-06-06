@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by_name(params["user_name"])
+    user = User.find_by_user_name(params["user_name"])
 
-    if user && user.authenticate_safely(params["password_digest"])
+    if user && user.authenticate(params["password"])
       session["user_id"] = user.user_id
       redirect_to "/conditions", notice: "Welcome back, #{user.first_name}"
     else

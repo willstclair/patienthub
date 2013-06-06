@@ -1,11 +1,11 @@
-<h1>Login</h1>
+<h2>Login</h2>
 
 
 <%= form_tag "/sessions" do %>
 
   <p><%= label_tag :user_name %><%= text_field_tag :user_name %></p>
-  <p><%= label_tag :password %><%= password_field_tag :password_digest %></p>
+  <p><%= label_tag :password %><%= password_field_tag :password %></p>
 
-  <%= submit_tag "Sign in you dummy" %>
+  <%= submit_tag "Sign in" %>
 
 <% end %>

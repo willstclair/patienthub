@@ -1,0 +1,19 @@
+<h1>Treatments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Treatment</th>
+      <th>Users </th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @treatments.each do |treatment| %>
+    <tr>
+      <td><%= link_to treatment.treatment_name, "/treatments/#{treatment.id}" %></td>
+      <td>      </td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>

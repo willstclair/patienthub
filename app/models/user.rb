@@ -3,4 +3,6 @@ class User < ActiveRecord::Base
 
   has_many :conditions
 
+  has_secure_password
+
 end

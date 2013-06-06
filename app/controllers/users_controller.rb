@@ -28,7 +28,7 @@ class UsersController < ActionController::Base
   def create
     @user = User.new
     @user.user_name = params[:user_name]
-    @user.password_digest = params[:password_digest]
+    @user.password = params[:password]
     @user.first_name = params[:first_name]
     @user.last_name = params[:last_name]
     @user.user_type = params[:user_type]

@@ -16,6 +16,8 @@ end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+  # need to run this command before the bootstrap gem will function: gem install twitter-bootstrap-rails
+  gem 'twitter-bootstrap-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -27,6 +29,9 @@ gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+
+
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
