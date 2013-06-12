@@ -4,12 +4,12 @@
   <thead>
     <tr>
       <th>Condition</th>
-      <th>Experts </th>
     </tr>
   </thead>
   <tbody>
   <% @conditions.each do |condition| %>
     <tr>
+      <td><%= condition.condition_category_id %></td>
       <td><%= link_to condition.condition_name, "/conditions/#{condition.id}" %></td>
       <td>      </td>
 

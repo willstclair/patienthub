@@ -1,11 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  condition_id: 1
-  condition_name: MyString
   condition_category_id: 1
+  condition_category_name: MyString
 
 two:
-  condition_id: 1
-  condition_name: MyString
   condition_category_id: 1
+  condition_category_name: MyString

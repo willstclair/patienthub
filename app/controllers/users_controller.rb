@@ -19,7 +19,7 @@ class UsersController < ActionController::Base
     @user.user_type = params[:user_type]
     @user.condition_id = params[:condition_id]
     @user.zip_code = params[:zip_code]
-    @user.treatments_advised = params[:treatments_advised]
+    @user.treatment_id = params[:treatment_id]
     @user.comments = params[:comments]
     @user.save
     redirect_to "/users"
@@ -34,7 +34,7 @@ class UsersController < ActionController::Base
     @user.user_type = params[:user_type]
     @user.condition_id = params[:condition_id]
     @user.zip_code = params[:zip_code]
-    @user.treatments_advised = params[:treatments_advised]
+    @user.treatment_id = params[:treatment_id]
     @user.comments = params[:comments]
     @user.save
     redirect_to "/users"

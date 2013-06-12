@@ -19,7 +19,7 @@ class ConditionsController < ActionController::Base
   def update
     @condition = Condition.find_by_id(params["condition_id"])
     @condition.condition_name = params[:condition_name]
-    @condition.category_id = params[:category_id]
+    @condition.condition_category_id = params[:condition_category_id]
     @condition.save
     redirect_to "/conditions"
   end
@@ -27,7 +27,7 @@ class ConditionsController < ActionController::Base
   def create
     @condition = Condition.new
     @condition.condition_name = params[:condition_name]
-    @condition.category_id = params[:category_id]
+    @condition.condition_category_id = params[:condition_category_id]
     @condition.save
     redirect_to "/conditions"
   end
@@ -38,7 +38,6 @@ class ConditionsController < ActionController::Base
 
   def show
     @condition = Condition.find_by_id(params["condition_id"])
-    @user_count = @condition.users.count(:user_id)
   end
 
   def new

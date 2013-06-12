@@ -9,7 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :user_type
       t.integer :zip_code
       t.integer :condition_id
-      t.string :treatments_advised
+      t.integer :treatments_advised
       t.string :comments
 
       t.timestamps

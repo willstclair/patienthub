@@ -6,6 +6,10 @@ Patienthub::Application.routes.draw do
   get "/logout", controller: 'sessions', action: 'destroy'
   post "/search", controller: 'conditions', action: 'filter'
 
+# Routes for the HomePage resource:
+
+  get '/home', controller: 'home_page', action: 'show', as: "home_page"
+
   # Routes for the Condition resource:
 
   get '/conditions/new', controller: 'conditions', action: 'new', as: "new_condition"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130605234622) do
+ActiveRecord::Schema.define(:version => 20130611220415) do
 
   create_table "categories", :force => true do |t|
     t.integer  "category_id"
@@ -20,12 +20,19 @@ ActiveRecord::Schema.define(:version => 20130605234622) do
     t.datetime "updated_at",    :null => false
   end
 
+  create_table "condition_categories", :force => true do |t|
+    t.integer  "condition_category_id"
+    t.string   "condition_category_name"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
   create_table "conditions", :force => true do |t|
     t.integer  "condition_id"
     t.string   "condition_name"
-    t.integer  "category_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.integer  "condition_category_id"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
   end
 
   create_table "treatment_categories", :force => true do |t|
@@ -52,10 +59,10 @@ ActiveRecord::Schema.define(:version => 20130605234622) do
     t.string   "user_type"
     t.integer  "zip_code"
     t.integer  "condition_id"
-    t.string   "treatments_advised"
     t.string   "comments"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.integer  "treatment_id"
   end
 
 end
