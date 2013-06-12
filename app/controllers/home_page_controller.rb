@@ -1,3 +1,3 @@
-class HomePageController < ActionController::Base
+class HomePageController < ApplicationController
 
 end

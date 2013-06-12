@@ -1,9 +1,14 @@
-<h1>Conditions</h1>
+<h3>Conditions</h3>
 
-<table>
+<%= form_tag '/conditions/search' do %>
+<%= text_field_tag :term, "", placeholder: 'Search...' %><% end %>
+
+<table class = "table table-striped">
   <thead>
     <tr>
+      <th>Condition category</th>
       <th>Condition</th>
+      <th>Users affected by this condition</th>
     </tr>
   </thead>
   <tbody>
@@ -11,7 +16,7 @@
     <tr>
       <td><%= condition.condition_category_id %></td>
       <td><%= link_to condition.condition_name, "/conditions/#{condition.id}" %></td>
-      <td>      </td>
+      <td><%= @user_count %> </td>
 
     </tr>
   <% end %>

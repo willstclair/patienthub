@@ -1,6 +1,6 @@
-class ConditionsController < ActionController::Base
+class ConditionsController < ApplicationController
 
- def destroy
+  def destroy
     m = Condition.find_by_id(params["condition_id"])
     m.destroy
     redirect_to "/conditions"
@@ -37,7 +37,9 @@ class ConditionsController < ActionController::Base
   end
 
   def show
-    @condition = Condition.find_by_id(params["condition_id"])
+    @condition = Condition.find_by_id(params[:condition_id])
+
+    @user_count =@condition.users.count(:condition_id)
   end
 
   def new

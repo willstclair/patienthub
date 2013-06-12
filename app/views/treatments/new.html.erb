@@ -1,4 +1,4 @@
-<h1>New Treatment</h1>
+<h2>Add a treatment to the directory</h2>
 
 
 <%= form_tag(treatments_url, method: 'post') do %>
@@ -7,6 +7,11 @@
   <div>
     <%= label_tag :treatment_name %><br />
     <%= text_field_tag :treatment_name %>
+  </div>
+
+  <div>
+    <%= label_tag :treatment_id %><br />
+    <%= text_field_tag :treatment_id %>
   </div>
 
   <div>

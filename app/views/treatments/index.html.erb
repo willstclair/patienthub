@@ -1,20 +1,28 @@
-<h1>Treatments</h1>
+<h2>Treatments</h2>
 
-<table>
+<%= form_tag '/treatments/search' do %>
+<%= text_field_tag :term, "", placeholder: 'Search...' %><% end %>
+
+<p><%= link_to 'Add a New Treatment', new_treatment_url %></p>
+
+<table class = "table table-striped">
   <thead>
     <tr>
-      <th>Treatment Category</th>
+      <th>Treatment category</th>
       <th>Treatment</th>
       <th>Users </th>
+      <th>Actions </th>
     </tr>
   </thead>
-  <tbody>
+
+ <tbody>
   <% @treatments.each do |treatment| %>
     <tr>
       <td><%= treatment.treatment_category_id %></td>
-      <td><%= link_to treatment.treatment_name, "/treatments/#{treatment.id}" %></td>
-      <td>      </td>
-
+      <td><%= link_to treatment.treatment_name.truncate(40), "/treatments/#{treatment.id}" %></td>
+      <td><%=  %></td>
+      <td><%= link_to 'Edit', edit_treatment_url(treatment) %> |
+      <%= link_to 'Delete', treatment_url(treatment), method: 'delete', data: { confirm: "Do you really want to delete this treatment?" } %></td>
     </tr>
   <% end %>
   </tbody>

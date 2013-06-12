@@ -1,9 +1,11 @@
-<h1><%= @user.user_name %></h1>
+<h2>User profile: <%= @user.user_name %></h2>
 
-<p>First Name: <%= @user.first_name %></p>
-<p>Last Name: <%= @user.last_name %></p>
-<p>User Type: <%= @user.user_type %></p>
-<p>Zip Code: <%= @user.zip_code %></p>
-<p>Condition ID: <%= @user.condition_id %></p>
-<p>Treatments: <%= @user.treatment_id %></p>
-<p>Comments: <%= @user.comments %></p>
+<dl class="dl-horizontal">
+<dt>First Name:</dt> <dd><%= @user.first_name %></dd>
+<dt>Last Name:</dt> <dd><%= @user.last_name %></dd>
+<dt>User Type:</dt> <dd><%= @user.user_type %></dd>
+<dt>Zip Code:</dt> <dd><%= @user.zip_code %></dd>
+<dt>Condition ID:</dt> <dd><%= @user.condition_id %></dd>
+<dt>Treatments:</dt> <dd><%= @user.treatment_id %></dd>
+<dt>Comments:</dt> <dd><%= @user.comments %></dd>
+</dl>

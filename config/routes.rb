@@ -1,10 +1,16 @@
 Patienthub::Application.routes.draw do
 
+# root URL
+
   get '/', controller: 'conditions', action: 'index'
   get '/login', controller: 'sessions', action: 'new'
   post '/sessions', controller: 'sessions', action: 'create'
   get "/logout", controller: 'sessions', action: 'destroy'
-  post "/search", controller: 'conditions', action: 'filter'
+
+
+
+
+
 
 # Routes for the HomePage resource:
 
@@ -19,6 +25,7 @@ Patienthub::Application.routes.draw do
   get '/conditions/:condition_id/edit', controller: 'conditions', action: 'edit', as: "edit_condition"
   put '/conditions/:condition_id', controller: 'conditions', action: 'update'
   delete '/conditions/:condition_id', controller: 'conditions', action: 'destroy'
+  post "/conditions/search", controller: 'conditions', action: 'filter'
   #------------------------------
 
 # Routes for the User resource:
@@ -30,6 +37,7 @@ Patienthub::Application.routes.draw do
  get "/users/:user_id/edit", controller: 'users', action: 'edit', as: "edit_user"
  put '/users/:user_id', controller: 'users', action: 'update'
  delete '/users/:user_id', controller: 'users', action: 'destroy'
+ post "/users/search", controller: 'users', action: 'filter'
 
  # Routes for the Treatment resource:
 
@@ -40,6 +48,7 @@ Patienthub::Application.routes.draw do
  get "/treatments/:treatment_id/edit", controller: 'treatments', action: 'edit', as: "edit_treatment"
  put '/treatments/:treatment_id', controller: 'treatments', action: 'update'
  delete '/treatments/:treatment_id', controller: 'treatments', action: 'destroy'
+ post "/treatments/search", controller: 'treatments', action: 'filter'
 
 end
 

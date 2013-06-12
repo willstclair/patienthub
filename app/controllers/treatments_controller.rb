@@ -1,4 +1,4 @@
-class TreatmentsController < ActionController::Base
+class TreatmentsController < ApplicationController
 
  def destroy
     m = Treatment.find_by_id(params["treatment_id"])
@@ -19,7 +19,7 @@ class TreatmentsController < ActionController::Base
   def update
     @treatment = Treatment.find_by_id(params["treatment_id"])
     @treatment.treatment_name = params[:treatment_name]
-    @treatment.category_id = params[:category_id]
+    @treatment.treatment_category_id = params[:treatment_category_id]
     @treatment.save
     redirect_to "/treatments"
   end
@@ -27,7 +27,7 @@ class TreatmentsController < ActionController::Base
   def create
     @treatment = Treatment.new
     @treatment.treatment_name = params[:treatment_name]
-    @treatment.category_id = params[:category_id]
+    @treatment.treatment_category_id = params[:treatment_category_id]
     @treatment.save
     redirect_to "/treatments"
   end
@@ -38,7 +38,6 @@ class TreatmentsController < ActionController::Base
 
   def show
     @treatment = Treatment.find_by_id(params["treatment_id"])
-    @user_count = @treatment.users.count(:user_id)
   end
 
   def new
