@@ -1,7 +1,7 @@
 <h3>Condition profile: <%= @condition.condition_name %></h3>
 
 <dl class="dl-horizontal">
-<dt>Condition category ID:</dt> <dd><%= @condition.condition_category_id %></dd>
-<dt>Condition ID:</dt> <dd><%= @condition.condition_id %></dd>
-<dt>Users:</dt> <dd><%=  %></dd>
+<dt>Condition category ID:</dt> <dd><%= @condition.condition_category.condition_category_name %></dd>
+<dt>Condition ID:</dt> <dd><%= @condition.id %></dd>
+<dt>Users with condition:</dt> <dd><%= @condition.diagnoses.count %></dd>
 </dl>

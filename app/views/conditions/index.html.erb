@@ -8,15 +8,15 @@
     <tr>
       <th>Condition category</th>
       <th>Condition</th>
-      <th>Users affected by this condition</th>
+      <th>Users affected</th>
     </tr>
   </thead>
   <tbody>
   <% @conditions.each do |condition| %>
     <tr>
-      <td><%= condition.condition_category_id %></td>
+      <td><%= condition.condition_category.condition_category_name %></td>
       <td><%= link_to condition.condition_name, "/conditions/#{condition.id}" %></td>
-      <td><%= @user_count %> </td>
+      <td><%=  %> </td>
 
     </tr>
   <% end %>

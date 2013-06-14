@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to "/conditions", notice: "Come back soon!"
+    redirect_to "/home", notice: "Come back soon!"
   end
   def new
   end

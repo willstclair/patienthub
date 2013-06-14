@@ -1,5 +1,8 @@
 Patienthub::Application.routes.draw do
 
+  resources :diagnoses
+
+
 # root URL
 
   get '/', controller: 'conditions', action: 'index'

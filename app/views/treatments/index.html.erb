@@ -10,7 +10,7 @@
     <tr>
       <th>Treatment category</th>
       <th>Treatment</th>
-      <th>Users </th>
+      <th>Users affected </th>
       <th>Actions </th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
  <tbody>
   <% @treatments.each do |treatment| %>
     <tr>
-      <td><%= treatment.treatment_category_id %></td>
+      <td><%= treatment.treatment_category.treatment_category_name %></td>
       <td><%= link_to treatment.treatment_name.truncate(40), "/treatments/#{treatment.id}" %></td>
-      <td><%=  %></td>
+      <td><%=   %></td>
       <td><%= link_to 'Edit', edit_treatment_url(treatment) %> |
       <%= link_to 'Delete', treatment_url(treatment), method: 'delete', data: { confirm: "Do you really want to delete this treatment?" } %></td>
     </tr>

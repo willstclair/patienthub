@@ -1,7 +1,6 @@
 <h2><%= @treatment.treatment_name %></h2>
 
 <dl class="dl-horizontal">
-<dt>Treatment category ID:</dt> <dd><%= @treatment.treatment_category_id %></dd>
-<dt>Treatment ID:</dt> <dd><%= @treatment.treatment_id %></dd>
-<dt>Users:</dt> <dd><%=  %></dd>
+<dt>Treatment category ID:</dt> <dd><%= @treatment.treatment_category.treatment_category_name %></dd>
+<dt>Users:</dt> <dd><%= @treatment.diagnoses.count %></dd>
 </dl>

@@ -11,8 +11,6 @@
       <th>Username</th>
       <th>Zip code</th>
       <th>User type</th>
-      <th>Condition</th>
-      <th>Treatment</th>
       <th>Email</th>
       <th>Actions</th>
     </tr>
@@ -24,9 +22,7 @@
       <td><%= link_to user.user_name.truncate(40), "/users/#{user.id}" %></td>
       <td><%= user.zip_code %></td>
       <td><%= user.user_type %></td>
-      <td><%= user.condition_id %></td>
-      <td><%= user.treatment_id %></td>
-      <td><%= user.email.truncate(15) %></td>
+      <td><%= user.email.truncate(25) %></td>
       <td><%= link_to 'Edit', edit_user_url(user) %> |
       <%= link_to 'Delete', user_url(user), method: 'delete', data: { confirm: "Do you really want to delete this user?" } %></td>
 

@@ -1,0 +1,28 @@
+<h2>Diagnoses</h2>
+
+<%= link_to 'New Diagnosis', new_diagnosis_path %>
+
+<table class = "table table-striped">
+  <thead>
+  <tr>
+    <th>User</th>
+    <th>Treatment</th>
+    <th>Condition</th>
+    <th>Actions</th>
+  </tr>
+    </thead>
+  <tbody>
+<% @diagnoses.each do |diagnosis| %>
+  <tr>
+    <td><%= diagnosis.user_name %></td>
+    <td><%= diagnosis.treatment_name %></td>
+    <td><%= diagnosis.condition_name %></td>
+    <td><%= link_to 'Show', diagnosis %> |
+    <%= link_to 'Edit', edit_diagnosis_path(diagnosis) %> |
+    <%= link_to 'Destroy', diagnosis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+

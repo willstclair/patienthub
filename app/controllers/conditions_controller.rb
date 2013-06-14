@@ -34,12 +34,15 @@ class ConditionsController < ApplicationController
 
   def index
     @conditions = Condition.all
+
+    #@condition_category_name = @condition.condition_category.name
+    # @user_count =@condition.users.count(:condition_id)
   end
 
   def show
     @condition = Condition.find_by_id(params[:condition_id])
 
-    @user_count =@condition.users.count(:condition_id)
+    # @user_count =@condition.diagnoses.count(:condition_id)
   end
 
   def new
